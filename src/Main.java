@@ -1,5 +1,3 @@
-package src;
-
 import java.util.Random;
 import java.lang.Math;
 import java.util.Scanner;
@@ -90,7 +88,7 @@ public class Main {
         for (int i = 1; i <= num; i++) {    // Почему без явной инициализации num Java выдает ошибку?
             sum *= i;
         }
-        System.out.print("\nРезультат выражения: " + num + "!" + " равен " + sum);
+        System.out.print("\nРезультат выражения " + num + "!" + " равен " + sum);
 
         return 0;
     }
