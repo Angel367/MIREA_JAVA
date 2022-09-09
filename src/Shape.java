@@ -1,3 +1,5 @@
+package src;
+
 class Shape {
     private String name;
     private int radius;
@@ -7,10 +9,10 @@ class Shape {
         this.radius = radius;
     }
 
-    public String toString () {
-        return "Shape{"
-                + "name='" + name + '\''
-                + ", radius=" + radius
-                + '}';
+    public String toString() {
+        return "Shape{" +
+                "name='" + name + '\'' +
+                ", radius=" + radius +
+                '}';
     }
 }

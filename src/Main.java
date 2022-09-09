@@ -1,3 +1,5 @@
+package src;
+
 /*
 1.Необходимо реализовать простейший класс Shape (Фигура) на языке программирования Java. Добавить метод toString().
 Создать класс-тестер для вывода информации об объекте.
@@ -14,10 +16,19 @@
 
 */
 
+
 public class Main {
-    static int SIZE = 10;
     public static void main(String[] args) {
-        Shape shape = new Shape("name", 0);
-        System.out.print(shape);
+        Shape shape = new Shape("name", 13);    // Создаём объект типа Shape
+        ShapeTester shapeTester = new ShapeTester(shape);   // Создаем объект класса-тестера
+        shapeTester.test(); // Вызываем метод теста у класса-тестера
+
+        Dog myDog = new Dog("as", 12);
+        Dog mySuperDog = new Dog("super", 13);  // Создали две собаки
+        DogKennel dogKennel = new DogKennel();  // И питомник
+        dogKennel.addDog(myDog);
+        dogKennel.addDog(mySuperDog);   // Добавили собак в питомник
+        dogKennel.showKennel(); // Вывели всех собак в питомнике
+
     }
 }
