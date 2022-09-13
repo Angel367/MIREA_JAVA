@@ -1,5 +1,3 @@
-package src.humanParts;
-
 public class Arm {
     private int length;
     private int amountOfFingers;

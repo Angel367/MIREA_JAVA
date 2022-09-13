@@ -1,5 +1,3 @@
-package src.humanParts;
-
 public class Head {
     private boolean isHairy;
     private int eyesAmount;

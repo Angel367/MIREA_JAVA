@@ -1,5 +1,3 @@
-package src.humanParts;
-
 public class Leg {
     private int length;
     private boolean isHairy;

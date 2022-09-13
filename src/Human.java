@@ -1,7 +1,3 @@
-package src;
-
-import src.humanParts.*;
-
 public class Human {
     private String name;
     private byte skinColor; // от -128 (белый) до 127 (чёрный)
