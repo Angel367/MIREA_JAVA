@@ -7,6 +7,7 @@ import src.shapes.Square;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class DrawShapes extends JPanel {
     private ArrayList<Circle> circles = new ArrayList<>();
@@ -65,5 +66,29 @@ public class DrawShapes extends JPanel {
         this.squares.add(square);
     }
 
+    public void addRandomShapes (int amount) {
+        Random random = new Random();
+        for (int i = 0; i < amount; i++) {
+            int shapeNum = random.nextInt(3);
+
+            if (shapeNum == 0)    // Circle
+                this.addCircle(new Circle(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                        random.nextBoolean(), random.nextInt(200)));
+
+            else if (shapeNum == 1)    // MyRectangle
+                this.addMyRectangle(new MyRectangle(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                        random.nextBoolean(), random.nextInt(200), random.nextInt(200)));
+
+
+            else {   // Square
+                int side = random.nextInt(200);
+                this.addSquare(new Square(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                        random.nextBoolean(), side, side));
+            }
+        }
+    }
 
 }
