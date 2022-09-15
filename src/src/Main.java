@@ -1,11 +1,8 @@
 package src;
 
-import src.shapes.Circle;
-import src.shapes.MyRectangle;
-import src.shapes.Square;
+import src.shapes.*;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
@@ -34,7 +31,7 @@ public class Main {
                         random.nextBoolean(), side, side));
             }
         }
-        DrawShapes imagePanel = new DrawShapes();
-        imagePanel.addImage("SHREK.gif");
+        DrawPicture imagePanel = new DrawPicture(args[0]);
+        DrawPicture imagePanel2 = new DrawPicture("SHREK.gif");
     }
 }

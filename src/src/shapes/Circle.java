@@ -3,7 +3,6 @@ package src.shapes;
 import src.Shape;
 
 import java.awt.*;
-import java.util.Random;
 
 public class Circle extends Shape {
     protected double radius;

@@ -4,20 +4,14 @@ import src.shapes.Circle;
 import src.shapes.MyRectangle;
 import src.shapes.Square;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class DrawShapes extends JPanel {
     private ArrayList<Circle> circles = new ArrayList<>();
     private ArrayList<MyRectangle> rectangles = new ArrayList<>();
     private ArrayList<Square> squares = new ArrayList<>();
-    private ImageIcon imageIcon;
 
     public DrawShapes(){
         JFrame frame = new JFrame();
@@ -28,7 +22,7 @@ public class DrawShapes extends JPanel {
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    protected void paintComponent(Graphics g) {
         this.setBackground(Color.WHITE);
         for (Circle circle : circles) {
             g.setColor(circle.getColor());
@@ -57,9 +51,6 @@ public class DrawShapes extends JPanel {
                 g.drawRect(square.getX(), square.getY(), (int) square.getSide(), (int) square.getSide());
         }
 
-        JLabel jLabel = new JLabel();
-        jLabel.setIcon(imageIcon);
-        jLabel.setPreferredSize(new Dimension(imageIcon.getIconWidth(), imageIcon.getIconHeight()));
 
     }
     public void addCircle (Circle newCircle) {
@@ -74,8 +65,5 @@ public class DrawShapes extends JPanel {
         this.squares.add(square);
     }
 
-    public void addImage (String path) {
-        imageIcon = new ImageIcon(path);
-    }
 
 }
