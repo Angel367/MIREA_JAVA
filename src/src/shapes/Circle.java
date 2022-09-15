@@ -1,7 +1,8 @@
 package src.shapes;
 
-import src.Main;
 import src.Shape;
+
+import java.awt.*;
 
 public class Circle extends Shape {
     protected double radius;
@@ -12,8 +13,8 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public Circle(double radius, String color, boolean filled) {
-        super(color, filled);
+    public Circle(int x, int y, String color, boolean filled, double radius) {
+        super(x, y, color, filled);
         this.radius = radius;
     }
 
@@ -42,5 +43,8 @@ public class Circle extends Shape {
                 ", filled=" + filled +
                 ", radius=" + radius +
                 '}';
+    }
+    public void draw(Graphics g) {
+        g.drawOval(x, y, (int)radius, (int)radius);
     }
 }

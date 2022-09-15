@@ -1,18 +1,35 @@
 package src;
 
 public abstract class Shape {
+    protected int x, y;
     protected String color;
     protected boolean filled;
 
     public Shape () {}
-    public Shape(String color, boolean filled) {
+    public Shape(int x, int y, String color, boolean filled) {
+        this.x = x;
+        this.y = y;
         this.color = color;
         this.filled = filled;
     }
 
-    public String getColor() {
-        return color;
+    public int getX() {
+        return x;
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public String getColor() { return color; }
 
     public void setColor(String color) {
         this.color = color;
@@ -31,7 +48,9 @@ public abstract class Shape {
     @Override
     public String toString() {
         return "Shape{" +
-                "color='" + color + '\'' +
+                "x=" + x +
+                ", y=" + y +
+                ", color='" + color + '\'' +
                 ", filled=" + filled +
                 '}';
     }
