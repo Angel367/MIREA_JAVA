@@ -1,22 +1,40 @@
 package src;
 
-import src.shapes.*;
-import src.shapes.Rectangle;
+import src.shapes.Circle;
+import src.shapes.MyRectangle;
+import src.shapes.Square;
 
-import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        //Circle circle = new Circle(2,3,3.7, "green", true);
-       // System.out.println("Площадь: " + circle.getArea() + "\n" + circle);
-
-        //Square square = new Square(15.2, "purple", false);
-       // System.out.println("Периметр: " + square.getPerimeter() + "\n" + circle);
-
-        //Rectangle rectangle = new Rectangle(3.2, 7.1);
-        //System.out.println("Площадь: " + rectangle.getArea() + "\n" + circle);
-
         DrawShapes drawShapes = new DrawShapes();
+        Random random = new Random();
+
+        for (int i = 0; i < 20; i++) {
+            int shapeNum = random.nextInt(3);
+
+            if (shapeNum == 0)    // Circle
+                drawShapes.addCircle(new Circle(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                                random.nextBoolean(), random.nextInt(200)));
+
+            else if (shapeNum == 1)    // MyRectangle
+                drawShapes.addMyRectangle(new MyRectangle(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                        random.nextBoolean(), random.nextInt(200), random.nextInt(200)));
+
+
+            else {   // Square
+                int side = random.nextInt(200);
+                drawShapes.addSquare(new Square(random.nextInt(1000), random.nextInt(600),
+                        new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255)),
+                        random.nextBoolean(), side, side));
+            }
+        }
+        DrawShapes imagePanel = new DrawShapes();
+        imagePanel.addImage("SHREK.gif");
     }
 }

@@ -1,12 +1,14 @@
 package src;
 
+import java.awt.*;
+
 public abstract class Shape {
     protected int x, y;
-    protected String color;
+    protected Color color;
     protected boolean filled;
 
     public Shape () {}
-    public Shape(int x, int y, String color, boolean filled) {
+    public Shape(int x, int y, Color color, boolean filled) {
         this.x = x;
         this.y = y;
         this.color = color;
@@ -29,9 +31,9 @@ public abstract class Shape {
         this.y = y;
     }
 
-    public String getColor() { return color; }
+    public Color getColor() { return color; }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 

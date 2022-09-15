@@ -3,6 +3,7 @@ package src.shapes;
 import src.Shape;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Circle extends Shape {
     protected double radius;
@@ -13,7 +14,7 @@ public class Circle extends Shape {
         this.radius = radius;
     }
 
-    public Circle(int x, int y, String color, boolean filled, double radius) {
+    public Circle(int x, int y, Color color, boolean filled, double radius) {
         super(x, y, color, filled);
         this.radius = radius;
     }

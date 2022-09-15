@@ -2,18 +2,20 @@ package src.shapes;
 
 import src.Shape;
 
-public class Rectangle extends Shape {
+import java.awt.*;
+
+public class MyRectangle extends Shape {
     protected double width;
     protected double length;
 
-    public Rectangle() { }
+    public MyRectangle() { }
 
-    public Rectangle(double width, double length) {
+    public MyRectangle(double width, double length) {
         this.width = width;
         this.length = length;
     }
 
-    public Rectangle(int x, int y, String color, boolean filled, double width, double length) {
+    public MyRectangle(int x, int y, Color color, boolean filled, double width, double length) {
         super(x, y, color, filled);
         this.width = width;
         this.length = length;
@@ -47,7 +49,7 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
+        return "MyRectangle{" +
                 "color='" + color + '\'' +
                 ", filled=" + filled +
                 ", width=" + width +

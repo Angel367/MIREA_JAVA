@@ -1,13 +1,15 @@
 package src.shapes;
 
-public class Square extends Rectangle{
+import java.awt.*;
+
+public class Square extends MyRectangle {
     public Square() {}
 
     public Square(double width, double length) {
         super(width, length);
     }
 
-    public Square(int x, int y, String color, boolean filled, double width, double length) {
+    public Square(int x, int y, Color color, boolean filled, double width, double length) {
         super(x, y, color, filled, width, length);
     }
 
