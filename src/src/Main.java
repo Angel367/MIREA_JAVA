@@ -1,10 +1,5 @@
 package src;
 
-import src.shapes.*;
-
-import java.awt.*;
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
         DrawShapes drawShapes = new DrawShapes();
