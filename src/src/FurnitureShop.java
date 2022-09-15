@@ -7,14 +7,13 @@ import java.util.Scanner;
 
 public class FurnitureShop {
     private int moneyAmount;
-    private int chairPrice = 35;
-    private int chestPrice = 70;
-    private ArrayList<Chair> chairs = new ArrayList<Chair>();
-    private ArrayList<Chest> chests = new ArrayList<Chest>();
+    private final int chairPrice = 35;
+    private final int chestPrice = 70;
+    private final ArrayList<Chair> chairs = new ArrayList<>();
+    private final ArrayList<Chest> chests = new ArrayList<>();
 
-    public FurnitureShop(int moneyAmount) {
-        this.moneyAmount = moneyAmount; // Кол-во денег в кассе в начале смены
-    }
+    public FurnitureShop(int moneyAmount) {this.moneyAmount = moneyAmount; }    // Кол-во денег в кассе в начале смены
+
 
     public FurnitureShop() {
         this.moneyAmount = 0;
@@ -23,6 +22,9 @@ public class FurnitureShop {
     public void openShift() {
         Scanner in = new Scanner(System.in);
         int userSelect;
+        int chairsSoldAmount = 0;
+        int chestsSoldAmount = 0;
+        System.out.println("Текущее количество денег в кассе: " + this.moneyAmount + "\nСмена открыта!");
         while (true) {
             System.out.print("""
                     МЕНЮ:
@@ -41,6 +43,7 @@ public class FurnitureShop {
                         System.out.println("Стулья закончились!");
                     else {
                         Chair soldChair = this.sellChair();
+                        chairsSoldAmount+=1;
                         System.out.println("Стул успешно продан!");
                     }
                     break;
@@ -49,6 +52,7 @@ public class FurnitureShop {
                         System.out.println("Комоды закончились!");
                     else {
                         Chest soldChest = this.sellChest();
+                        chestsSoldAmount+=1;
                         System.out.println("Комод успешно продан!");
                     }
                     break;
@@ -63,12 +67,16 @@ public class FurnitureShop {
                     System.out.println("Текущее количество денег в кассе: " + this.moneyAmount);
                     break;
                 case 5:
-                    System.out.println("Продано: ");
+                    System.out.println("Продано: \nСтульев: " + chairsSoldAmount + "\nКомодов: " + chestsSoldAmount);
                     break;
                 case 6:
+                    System.out.println("Выручка за сегодня: " +  chairsSoldAmount*chairPrice+
+                            chestsSoldAmount*chestPrice + "\nОстаток денег в кассе: " + moneyAmount +
+                            "\nПродано стульев: " + chairsSoldAmount + "\nПродано комодов: " + chestsSoldAmount);
+                            return;
+                default:
+                    System.out.println("Некорректный пункт меню! Введите еще раз: ");
                     break;
-                default: System.out.println("Некорректный пункт меню! Введите еще раз: ");
-                break;
             }
         }
     }

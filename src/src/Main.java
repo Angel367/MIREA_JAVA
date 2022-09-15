@@ -18,7 +18,7 @@ public class Main {
 
         FurnitureShop furnitureShop = new FurnitureShop();
         furnitureShop.openShift();
-
+        furnitureShop.openShift();
 
 
     }
