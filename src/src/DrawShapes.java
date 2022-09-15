@@ -6,6 +6,8 @@ import src.shapes.Square;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -20,6 +22,16 @@ public class DrawShapes extends JPanel {
         frame.add(this);
         frame.setSize(1280, 720);
         frame.setVisible(true);
+        JButton jButton = new JButton("Добавить фигуру!");
+        jButton.setSize(200, 30);
+        jButton.setLocation(10,10);
+        jButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                addRandomShapes(1);
+                repaint();
+            }
+        });
+        this.add(jButton);
     }
 
     @Override
@@ -28,28 +40,28 @@ public class DrawShapes extends JPanel {
         for (Circle circle : circles) {
             g.setColor(circle.getColor());
             if (circle.isFilled())
-                g.fillOval(circle.getX(), circle.getY(), (int) circle.getRadius()/2+1,
+                g.fillOval(circle.getX()+50, circle.getY(), (int) circle.getRadius()/2+1,
                         (int) circle.getRadius()/2+1);
             else
-                g.drawOval(circle.getX(), circle.getY(), (int) circle.getRadius()/2,
+                g.drawOval(circle.getX()+50, circle.getY(), (int) circle.getRadius()/2,
                         (int) circle.getRadius()/2);
         }
         for (MyRectangle myRectangle : rectangles) {
             g.setColor(myRectangle.color);
             if (myRectangle.isFilled())
-                g.fillRect(myRectangle.getX(), myRectangle.getY(), (int) myRectangle.getWidth()+1,
+                g.fillRect(myRectangle.getX()+50, myRectangle.getY(), (int) myRectangle.getWidth()+1,
                         (int) myRectangle.getLength()+1);
             else
-                g.drawRect(myRectangle.getX(), myRectangle.getY(), (int) myRectangle.getWidth(),
+                g.drawRect(myRectangle.getX()+50, myRectangle.getY(), (int) myRectangle.getWidth(),
                         (int) myRectangle.getLength());
         }
         for (Square square : squares) {
             g.setColor(square.getColor());
             if (square.isFilled())
-                g.fillRect(square.getX(), square.getY(), (int) square.getSide()+1,
+                g.fillRect(square.getX()+50, square.getY(), (int) square.getSide()+1,
                         (int) square.getSide()+1);
             else
-                g.drawRect(square.getX(), square.getY(), (int) square.getSide(), (int) square.getSide());
+                g.drawRect(square.getX()+50, square.getY(), (int) square.getSide(), (int) square.getSide());
         }
 
 
