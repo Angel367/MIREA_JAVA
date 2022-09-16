@@ -1,5 +1,6 @@
 package src;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Solution {
@@ -117,9 +118,37 @@ public class Solution {
     }
 
     public void task14 (int num) {
-        if (num < 10) return;
-        System.out.print(num % (int)Math.log10(num) + " ");
-        task14(num/10);
+        if (num == 0) return;
+        int t = (int)Math.pow(10, (int)Math.log10(num));
+        System.out.print(num / t + " ");
+        task14(num - (t*(num/t)));
     }
 
+    public void task15 (int num) {
+        if (num == 0) return;
+        System.out.print(num % 10 + " ");
+        task15(num/10);
+    }
+    public int task16 () {
+        ArrayList<Integer> myArr = new ArrayList<>();
+        Scanner inp = new Scanner(System.in);
+        int result = 0, max = 0;
+        while (true) {
+            int currNum = inp.nextInt();
+            if (currNum == 0) break;
+            if (currNum > max) max = currNum;
+            myArr.add(currNum);
+        }
+        for (int i : myArr)
+            if (i == max)
+                result+=1;
+
+        return result;
+    }
+    public int task17() {
+        Scanner inp = new Scanner(System.in);
+        int num = inp.nextInt();
+        if (num == 0) return 0;
+        return Math.max(num, task17());
+    }
 }
