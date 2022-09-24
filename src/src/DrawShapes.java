@@ -1,8 +1,8 @@
-package src;
+package src.src;
 
-import src.shapes.Circle;
-import src.shapes.MyRectangle;
-import src.shapes.Square;
+import src.src.shapes.Circle;
+import src.src.shapes.MyRectangle;
+import src.src.shapes.Square;
 
 import javax.swing.*;
 import java.awt.*;
