@@ -2,8 +2,16 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-public class SortingStudentsByGPA {
+public class Students {
     private ArrayList<Student> iDNumber = new ArrayList<>();
+
+    public void quickSort () {
+        SortingStudentsByGPAComparator sortingStudentsByGPAComparator = new SortingStudentsByGPAComparator();
+        iDNumber.sort(sortingStudentsByGPAComparator);
+    }
+    public void mergeSort () {
+
+    }
 
     public void setArray() {
         Scanner scanner = new Scanner(System.in);
