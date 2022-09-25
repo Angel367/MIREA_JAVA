@@ -9,9 +9,7 @@ public class Students {
         SortingStudentsByGPAComparator sortingStudentsByGPAComparator = new SortingStudentsByGPAComparator();
         iDNumber.sort(sortingStudentsByGPAComparator);
     }
-    public void mergeSort () {
 
-    }
 
     public void setArray() {
         Scanner scanner = new Scanner(System.in);

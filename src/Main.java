@@ -3,7 +3,7 @@ public class Main {
         Students students = new Students();
         students.setArray(true);
         students.outArray();
-        students.quickSort();
+        //students.mergeSort();
         students.outArray();
     }
 }
