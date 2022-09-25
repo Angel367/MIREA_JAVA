@@ -36,10 +36,10 @@ public class Student{
 
     @Override
     public String toString() {
-        return "Student{" +
+        return String.format("Student{" +
                 "iDNumber=" + iDNumber +
                 ", name='" + name + '\'' +
-                ", GPA=" + GPA +
-                '}';
+                ", GPA=%.2f" +
+                '}', GPA);
     }
 }
