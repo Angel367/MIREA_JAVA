@@ -40,10 +40,17 @@ public class Students {
     public static ArrayList<Student> mergeSort(ArrayList<Student> a, ArrayList<Student> b) {
         int n = a.size() + b.size();
         Student[] c = new Student[n];
-        for (int i = 0; i < a.size() + b.size(); i++)
-            if (i < a.size()) c[i] = a.get(i);
-            else c.add(b.get(i - a.size()));
-
+        int i;
+        for (i = 0; i < n; i++) {
+            if (i < a.size())
+                c[i] = a.get(i);
+            else
+                c[i] = b.get(i - a.size());
+        }
+        Student[] result = mergeSort(c, n);
+        ArrayList<Student> resultList = new ArrayList<>();
+        Collections.addAll(resultList, result);
+        return resultList;
 
     }
     public static Student[] merge(

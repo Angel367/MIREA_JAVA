@@ -18,11 +18,15 @@ public class Main {
         students.outArray();
 
         ArrayList<Student> students1 = new ArrayList<>();
-        ArrayList<Student> students2 = new ArrayList<>();   // Создали 2 списка студентов
+        ArrayList<Student> students2 = new ArrayList<>();
+        ArrayList<Student> students3 = new ArrayList<>();   // Создали 3 списка студентов
         Students.setArray(students1, 5);
         Students.setArray(students2, 5);    // "Наполнили" 2 списка студентов
+        System.out.println("2 неотсортированных списка:");
         Students.outArray(students1);
         Students.outArray(students2);   // "Вывели" 2 списка студентов
-        Students.mergeSort(students1, students2);
+        students3 = Students.mergeSort(students1, students2);
+        System.out.println("1 отсортированный список:");
+        Students.outArray(students3);
     }
 }
