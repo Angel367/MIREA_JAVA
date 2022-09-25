@@ -3,7 +3,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class SortingStudentsByGPA {
-    private ArrayList<Student> students = new ArrayList<>();
+    private ArrayList<Student> iDNumber = new ArrayList<>();
 
     public void setArray() {
         Scanner scanner = new Scanner(System.in);
@@ -22,7 +22,7 @@ public class SortingStudentsByGPA {
             int groupNumber = scanner.nextInt();
             System.out.print("Введите средний балл студента номер " + i + ": ");
             double GPA = scanner.nextDouble();
-            students.add(new Student(name, curName, specialization, courseNumber, groupNumber, GPA));
+            iDNumber.add(new Student(name, curName, specialization, courseNumber, groupNumber, GPA));
             System.out.print("Студент успешно добавлен!");
         }
         System.out.print("Студенты успешно добавлены!");
@@ -41,16 +41,16 @@ public class SortingStudentsByGPA {
             String name = "Иван" + i;
             String curName = "Смирнов";
             String specialization = "Киб";
-            int courseNumber = random.nextInt(4);
-            int groupNumber = random.nextInt(12);
-            double GPA = random.nextDouble()*5;
-            students.add(new Student(name, curName, specialization, courseNumber, groupNumber, GPA));
+            int courseNumber = random.nextInt(4)+1;
+            int groupNumber = random.nextInt(12)+1;
+            double GPA = random.nextDouble()*4+1;
+            iDNumber.add(new Student(name, curName, specialization, courseNumber, groupNumber, GPA));
         }
         System.out.println("Студенты успешно добавлены!");
     }
 
     public void outArray() {
-        for (Student student : students) {
+        for (Student student : iDNumber) {
             System.out.println(student);
         }
     }

@@ -64,13 +64,13 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
+        return String.format("Student{" +
                 "name='" + name + '\'' +
                 ", curName='" + curName + '\'' +
                 ", specialization='" + specialization + '\'' +
                 ", courseNumber=" + courseNumber +
                 ", groupNumber=" + groupNumber +
-                ", GPA=" + GPA +
-                '}';
+                ", GPA=%.2f" +
+                '}', GPA);
     }
 }
