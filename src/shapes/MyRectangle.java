@@ -1,6 +1,4 @@
-package src.shapes;
-
-import src.Shape;
+package shapes;
 
 import java.awt.*;
 
