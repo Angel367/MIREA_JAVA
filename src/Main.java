@@ -5,10 +5,10 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        //task1();
-        //task2();
-        //task3();
-        //task4();
+        task1();
+        task2();
+        task3();
+        task4();
         task5();
     }
     public static void task1() {
@@ -79,11 +79,66 @@ public class Main {
         Date date = calendar.getTime();
         System.out.print("Класс Calendar: " + calendar + "\nКласс Date:" + date);
     }
-    public void task5() {
+    public static void task5() {
         LinkedList<Student> studentsList = new LinkedList<>();
         ArrayList<Student> studentsArray = new ArrayList<>();
+        int amount = 10000;
+        Random random = new Random();
 
         long beginTime = System.currentTimeMillis();
-        for ()
+        for (int i = 0; i < amount; i++)
+            studentsList.add(new Student());
+        long operationTimeList = System.currentTimeMillis() - beginTime;
+        System.out.println("Добавление для LinkedList: " + operationTimeList);
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount; i++)
+            studentsArray.add(new Student());
+        long operationTimeArray = System.currentTimeMillis() - beginTime;
+        System.out.println("Добавление для ArrayList: " + operationTimeArray);
+        System.out.println("Разница составила: " + (operationTimeList - operationTimeArray));
+
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount; i++)
+            studentsList.add(random.nextInt(amount), new Student());
+        operationTimeList = System.currentTimeMillis() - beginTime;
+        System.out.println("\nВставка для LinkedList: " + operationTimeList);
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount; i++)
+            studentsArray.add(random.nextInt(amount), new Student());
+        operationTimeArray = System.currentTimeMillis() - beginTime;
+        System.out.println("Вставка для ArrayList: " + operationTimeArray);
+        System.out.println("Разница составила: " + (operationTimeList - operationTimeArray));
+
+
+        for (int i = 0; i < amount*2; i++)
+            studentsList.indexOf(new Student());
+        operationTimeList = System.currentTimeMillis() - beginTime;
+        System.out.println("\nПоиск для LinkedList: " + operationTimeList);
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount*2; i++)
+            studentsArray.indexOf(new Student());
+        operationTimeArray = System.currentTimeMillis() - beginTime;
+        System.out.println("Поиск для ArrayList: " + operationTimeArray);
+        System.out.println("Разница составила: " + (operationTimeList - operationTimeArray));
+
+
+
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount*2; i++)
+            studentsList.remove(0);
+        operationTimeList = System.currentTimeMillis() - beginTime;
+        System.out.println("\nУдаление для LinkedList: " + operationTimeList);
+
+        beginTime = System.currentTimeMillis();
+        for (int i = 0; i < amount*2; i++)
+            studentsArray.remove(0);
+        operationTimeArray = System.currentTimeMillis() - beginTime;
+        System.out.println("Удаления для ArrayList: " + operationTimeArray);
+        System.out.println("Разница составила: " + (operationTimeList - operationTimeArray));
     }
 }

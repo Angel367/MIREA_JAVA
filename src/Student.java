@@ -2,28 +2,33 @@ import java.text.DateFormat;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.Scanner;
+import java.util.*;
 
 public class Student {
     private String name, curName, specialization;
     private int courseNumber, groupNumber;
-    private double GPA;
     private GregorianCalendar birthday;
     private SimpleDateFormat sdf;
 
-    public Student(String name, String curName, String specialization, int courseNumber, int groupNumber, double GPA,
+    public Student(String name, String curName, String specialization, int courseNumber, int groupNumber,
                    GregorianCalendar birthday) {
         this.name = name;
         this.curName = curName;
         this.specialization = specialization;
         this.courseNumber = courseNumber;
         this.groupNumber = groupNumber;
-        this.GPA = GPA;
         this.birthday = birthday;
     }
+    public Student() {
+        Random random = new Random();
+        this.name = "Карапуз";
+        this.curName = "Пельмень";
+        this.specialization = "Специалист по детским пельменям";
+        this.courseNumber = random.nextInt(4)+1;
+        this.groupNumber = random.nextInt(12)+1;
+        this.birthday = new GregorianCalendar();
+    }
+
     public Student(String name, String curName, String specialization, int courseNumber, int groupNumber, double GPA){
         Scanner inp = new Scanner(System.in);
         this.name = name;
@@ -31,7 +36,6 @@ public class Student {
         this.specialization = specialization;
         this.courseNumber = courseNumber;
         this.groupNumber = groupNumber;
-        this.GPA = GPA;
 
         System.out.println("Введите дату рождения студента: ");
 
@@ -99,14 +103,6 @@ public class Student {
         this.groupNumber = groupNumber;
     }
 
-    public double getGPA() {
-        return GPA;
-    }
-
-    public void setGPA(double GPA) {
-        this.GPA = GPA;
-    }
-
     public GregorianCalendar getBirthday() {
         return birthday;
     }
@@ -127,14 +123,13 @@ public class Student {
     public String toString() {
         Date temp = new Date(birthday.getTimeInMillis());
         String formattedDate = this.sdf.format(temp);
-        return String.format("Student{" +
+        return "Student{" +
                 "name='" + name + '\'' +
                 ", curName='" + curName + '\'' +
                 ", specialization='" + specialization + '\'' +
                 ", courseNumber=" + courseNumber +
                 ", groupNumber=" + groupNumber +
-                ", GPA=%.2f" +
                 ", birthday=" + formattedDate +
-                '}', GPA);
+                '}';
     }
 }
