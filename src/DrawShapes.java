@@ -1,8 +1,5 @@
-package src.src;
+import shapes.*;
 
-import src.src.shapes.Circle;
-import src.src.shapes.MyRectangle;
-import src.src.shapes.Square;
 
 import javax.swing.*;
 import java.awt.*;
@@ -47,7 +44,7 @@ public class DrawShapes extends JPanel {
                         (int) circle.getRadius()/2);
         }
         for (MyRectangle myRectangle : rectangles) {
-            g.setColor(myRectangle.color);
+            g.setColor(myRectangle.getColor());
             if (myRectangle.isFilled())
                 g.fillRect(myRectangle.getX()+50, myRectangle.getY(), (int) myRectangle.getWidth()+1,
                         (int) myRectangle.getLength()+1);

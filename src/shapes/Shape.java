@@ -1,4 +1,4 @@
-package src.src;
+package shapes;
 
 import java.awt.*;
 
@@ -49,7 +49,7 @@ public abstract class Shape {
 
     @Override
     public String toString() {
-        return "Shape{" +
+        return "shapes.Shape{" +
                 "x=" + x +
                 ", y=" + y +
                 ", color='" + color + '\'' +
