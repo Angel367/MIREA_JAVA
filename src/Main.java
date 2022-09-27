@@ -19,7 +19,7 @@ public class Main {
         }
 
     }
-
+    //(((\d+)|(\d+.\d{2}))+(\s(USD|EU|RUB)))
     public static void task2() {
         System.out.println("Задание 2:");
         String str1 = "abcdefghijklmnopqrstuv18340";
