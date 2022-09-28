@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,7 +10,12 @@ public class Main {
         //task4();
         //task5();
         //task6();
-        task7();
+        //task7();
+        //task8();
+        task9("Мистер и миссис Дурсль проживали в доме номер четыре по Тисовой улице и всегда с гордостью" +
+                "заявляли, что они, слава богу, абсолютно нормальные люди. Уж от кого-кого, а от них никак нельзя было"+
+                "ожидать, чтобы они попали в какую-нибудь странную или загадочную ситуацию. Мистер и миссис Дурсль" +
+                "весьма неодобрительно относились к любым странностям, загадкам и прочей ерунде.");
     }
     public static void task1() {
         Scanner scanner = new Scanner(System.in);
@@ -79,7 +84,7 @@ public class Main {
     }
     public static void task7() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Задание 7:\nВведите пароль, состоящий не менее чем из 8 символов и содержащий ХОТЯ БЫ одну" +
+        System.out.println("Задание 7:\nВведите пароль, состоящий не менее чем из 8 символов и содержащий ХОТЯ БЫ одну"+
                         "маленькую и одну большую букву");
         String text = scanner.nextLine();
         Pattern pattern8Symbols = Pattern.compile(".{8}");
@@ -92,6 +97,48 @@ public class Main {
             System.out.println("Строка является надежным паролем!");
         else
             System.out.println("Строка НЕ является надежным паролем!");
+    }
+    public static void task8() {
+        String[] strArray = new String[10];
+        strArray[0] = "0";
+        strArray[3] = "3";
+        System.out.println("Длина исходного массива: " + strArray.length);
+
+        String[] editedStrArray = (String[]) filter(strArray, new Filter() {
+            @Override
+            public boolean apply(Object o) {
+                return o != null;
+            }
+        });
+        System.out.println(Arrays.asList(editedStrArray));
+        System.out.println("Длина нового массива: " + editedStrArray.length);
+    }
+    public static Object[] filter(Object[] arr, Filter filter) {
+        int shift = 0;  // Величина сдвига
+
+        for (int i = 0; i < arr.length; i++) {
+            if (!filter.apply(arr[i]))
+                shift += 1;
+            else
+                arr[i-shift] = arr[i];
+        }
+        return Arrays.copyOf(arr, arr.length-shift);
+    }
+    public static void task9(String text) {
+        Map<Character, Integer> myMap = new TreeMap<>();    // TreeMap сортируется сама офигеть
+        char ch;
+        for (int i = 0; i < text.length(); i++) {
+            ch = Character.toLowerCase(text.charAt(i));
+            if (ch >= 'а' && ch <= 'я') {
+                if (!myMap.containsKey(ch))
+                    myMap.put(ch, 1);
+                else
+                    myMap.put(ch, myMap.get(ch) + 1);
+            }
+        }
+        for (char key : myMap.keySet()) {
+            System.out.println(key + ": " + myMap.get(key));
+        }
     }
 
 }
