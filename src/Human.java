@@ -1,3 +1,7 @@
+import humanParts.Arm;
+import humanParts.Head;
+import humanParts.Leg;
+
 public class Human {
     private String name;
     private byte skinColor; // от -128 (белый) до 127 (чёрный)

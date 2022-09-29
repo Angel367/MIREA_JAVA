@@ -1,3 +1,5 @@
+package humanParts;
+
 public class Head {
     private boolean isHairy;
     private int eyesAmount;
@@ -34,7 +36,7 @@ public class Head {
     }
 
     public String toString() {
-        return "Head{" +
+        return "humanParts.Head{" +
                 "isHairy=" + isHairy +
                 ", eyesAmount=" + eyesAmount +
                 ", radius=" + radius +

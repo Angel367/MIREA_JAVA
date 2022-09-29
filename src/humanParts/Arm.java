@@ -1,3 +1,5 @@
+package humanParts;
+
 public class Arm {
     private int length;
     private int amountOfFingers;
@@ -34,7 +36,7 @@ public class Arm {
     }
 
     public String toString() {
-        return "Arm{" +
+        return "humanParts.Arm{" +
                 "length=" + length +
                 ", amountOfFingers=" + amountOfFingers +
                 ", isHairy=" + isHairy +

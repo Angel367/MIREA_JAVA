@@ -1,3 +1,5 @@
+package humanParts;
+
 public class Leg {
     private int length;
     private boolean isHairy;
@@ -35,7 +37,7 @@ public class Leg {
 
     @Override
     public String toString() {
-        return "Leg{" +
+        return "humanParts.Leg{" +
                 "length=" + length +
                 ", isHairy=" + isHairy +
                 ", amountOfFingers=" + amountOfFingers +
