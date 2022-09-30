@@ -7,5 +7,6 @@ public class Main {
         //Calc calc = new Calc();
         //SelectMenu selectMenu = new SelectMenu();
         Notepad notepad = new Notepad();
+
     }
 }

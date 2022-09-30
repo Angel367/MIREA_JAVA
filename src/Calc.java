@@ -149,9 +149,8 @@ public class Calc {
                     input.setText(currStr + "+");
             }
         });
-
     }
-    private static class RoundedBorder implements Border {
+    public static class RoundedBorder implements Border {
         private int radius;
         RoundedBorder(int radius) {
             this.radius = radius;
