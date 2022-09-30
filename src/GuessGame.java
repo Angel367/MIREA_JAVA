@@ -8,11 +8,14 @@ import java.awt.event.ActionListener;
 
 public class GuessGame {
     private int attemptCount;
+    int targetNum;
     JTextPane textArea;
     JFrame frame;
     GuessGame() {
         attemptCount = 0;
-        frame = new JFrame("Угадайка");
+        targetNum = (int) (Math.random()*21);
+        System.out.println(targetNum);
+        frame = new JFrame("Угадай-ка");
         initializeFrame(frame);
         addTextArea();
         addJLabel();
@@ -45,9 +48,27 @@ public class GuessGame {
             public void actionPerformed(ActionEvent e) {
                 attemptCount += 1;
                 int inputNum = stringHandler(textArea.getText());
-                if (inputNum == -1)
+                if (inputNum < 0) {
+                    JOptionPane.showMessageDialog(null, "Некорректное число!");
+                    textArea.setText("");
+                }
+
+                else if (inputNum == targetNum) {
+                    JOptionPane.showMessageDialog(null, "Вы угадали!!!");
+                    close();
+                }
+                else if (inputNum < targetNum)
+                    JOptionPane.showMessageDialog(null, "Не угадали, загаданное число больше :(");
+                else
+                    JOptionPane.showMessageDialog(null, "Не угадали, загаданное число меньше :(");
+                if (attemptCount >= 3) {
+                    JOptionPane.showMessageDialog(null, "Угадать не получилось :(");
+                    close();
+                }
             }
         });
+        jButton.setBounds(5, 20, 100 ,40);
+        frame.add(jButton);
     }
     private int stringHandler(String inputString) {
         int result;
@@ -57,6 +78,11 @@ public class GuessGame {
             return -1;
         }
         return result;
+    }
+    private void close() {
+        frame.dispose();
+        frame.setVisible(false);
+        System.exit(0);
     }
 
 }
