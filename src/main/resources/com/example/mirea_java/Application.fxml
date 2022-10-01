@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea layoutX="14.0" layoutY="73.0" prefHeight="320.0" prefWidth="577.0" />
+      <Button layoutX="14.0" layoutY="39.0" mnemonicParsing="false" prefHeight="12.0" prefWidth="75.0" text="Кнопка 1" />
+      <Button layoutX="98.0" layoutY="39.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Дикая кнопка 2" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="599.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Сохранить" />
+                  <MenuItem mnemonicParsing="false" text="Закрыть" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Редактировать">
+            <items>
+                <MenuItem mnemonicParsing="false" text="Копировать" />
+                  <MenuItem mnemonicParsing="false" text="Вырезать" />
+                  <MenuItem mnemonicParsing="false" text="Вставить" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Справка">
+              <Menu mnemonicParsing="false" text="Файл">
+                  <items>
+                      <MenuItem mnemonicParsing="false" text="Сохранить" />
+                      <MenuItem mnemonicParsing="false" text="Закрыть" />
+                  </items>
+              </Menu>
+              <Menu mnemonicParsing="false" text="Редактировать">
+                  <items>
+                      <MenuItem mnemonicParsing="false" text="Копировать" />
+                      <MenuItem mnemonicParsing="false" text="Вырезать" />
+                      <MenuItem mnemonicParsing="false" text="Вставить" />
+                  </items>
+              </Menu>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AmbientLight cache="true" layoutX="410.0" layoutY="118.0" lightOn="true" pickOnBounds="true">
+         <color>
+            <Color red="0.5" green="1.0" />
+         </color>
+      </AmbientLight>
+   </children>
+</AnchorPane>
