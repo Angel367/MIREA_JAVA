@@ -16,6 +16,7 @@ public class ColorFontSelector {
         menuBar.add(createFontMenu());
 
         frame = new JFrame();
+        frame.setDefaultCloseOperation(frame.EXIT_ON_CLOSE);
         textArea = new JTextArea();
         textArea.setBounds(0, 0, 100, 100);
         textArea.setFont(twr);
